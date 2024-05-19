@@ -1,0 +1,50 @@
+:root {
+  --width: min(90vw, 800px);
+  --offset: 0 -0.78rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+main {
+  height: 100vh;
+  height: 100svh;
+  display: grid;
+  place-items: center;
+  background-color: azure;
+}
+
+.list {
+  width: var(--width);
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.item {
+  position: relative;
+  flex: 1;
+  aspect-ratio: 1;
+  border-radius: 0.25rem;
+  transition: flex 1s, margin 0.4s;
+  cursor: pointer;
+}
+
+.item:hover + .item,
+.item:has(+ :hover) {
+  flex: 4;
+  margin: var(--offset);
+  z-index: 5;
+}
+
+.item img {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
